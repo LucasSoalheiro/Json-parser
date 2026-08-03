@@ -30,7 +30,7 @@ typedef struct JSON {
     char *string;
     struct JSON *object;
   } value;
-  JSON *next;
+  struct JSON *next;
 } JSON;
 
 void parser();
