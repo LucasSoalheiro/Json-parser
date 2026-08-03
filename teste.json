@@ -1,0 +1,19 @@
+{
+	"texto": "valor texto",
+	"numero": 12,
+	"decimal": 12.12,
+	"booleano": true,
+	"sem_valor": null,
+	"lista": [],
+	"lista_com_itens": [
+		"texto",
+		12,
+		true
+	],
+	"objeto": {},
+	"objeto_com_itens": {
+		"verdadeiro": true,
+		"falso": false,
+		"texto": "texto"
+	}
+}
