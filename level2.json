@@ -1,0 +1,12 @@
+{
+	"name": "Lucas",
+	"graduations": [
+		"FATEC",
+		"SENAI"
+	],
+	"projects": {
+		"Minty": "PHP",
+		"Twent": "TS",
+		"Tic-Tac-Toe": "C"
+	}
+}

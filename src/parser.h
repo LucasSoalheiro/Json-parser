@@ -4,33 +4,31 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef enum {
-  JSON_INT,           // integer numbers: 	1
-  JSON_DECIMAL,       // decimal numbers: 	1.23
-  JSON_BOOLEAN,       // boolean: 		true | false
-  JSON_STRING,        // string: 		"text"
-  JSON_ARRAY,         // array: 		[]
-  JSON_OBJECT,        // object: 		{}
-  JSON_QUOTES,        // quote: 		""
-  JSON_OPEN_BRACKET,  // open bracket: 		[
-  JSON_CLOSE_BRACKET, // close bracket: 	]
-  JSON_COMMA,         // comma: 		,
-  JSON_OPEN_BRACE,    // open brace: 		{
-  JSON_CLOSE_BRACE,   // close brace: 		}
-  JSON_COLON,         // colon:			:
+  JSON_INT,
+  JSON_DECIMAL,
+  JSON_TRUE,
+  JSON_FALSE,
+  JSON_STRING,
+  JSON_NULL,
+  JSON_ARRAY,
+  JSON_OBJECT,
+
+  JSON_QUOTES,        // ""
+  JSON_OPEN_BRACKET,  // [
+  JSON_CLOSE_BRACKET, // ]
+  JSON_COMMA,         // ,
+  JSON_OPEN_BRACE,    // {
+  JSON_CLOSE_BRACE,   // }
+  JSON_COLON,         // :
+  JSON_EOF,
 } JSON_TYPES;
 
 typedef struct JSON {
   char *key;
   JSON_TYPES data_type;
-  union {
-    double number;
-    bool boolean;
-    char *string;
-    struct JSON *object;
-  } value;
-  JSON *next;
 } JSON;
 
 void parser();
