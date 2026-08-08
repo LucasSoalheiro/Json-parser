@@ -1,8 +1,10 @@
 #include "lexer.h"
 
-void free_tokens(Token_list *token_list, size_t index) {
-  for (size_t i = 0; i < index; i++) {
-    if (token_list->tokens[i].lexeme != NULL) {
+void free_tokens(Token_list *token_list) {
+  for (size_t i = 0; i < token_list->count; i++) {
+
+    if (token_list->tokens[i].lexeme &&
+        token_list->tokens[i].token != TOKEN_EOF) {
       free(token_list->tokens[i].lexeme);
     }
   }
@@ -106,11 +108,11 @@ char *number_token(const char *text, size_t *index) {
     number[i] = text[*index];
     (*index)++;
   }
+
+  number[number_size] = '\0';
   if (!is_valid_number(number)) {
     free(number);
     return NULL;
-  } else {
-    number[number_size] = '\0';
   }
 
   return number;

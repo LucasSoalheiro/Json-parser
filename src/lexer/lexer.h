@@ -32,5 +32,5 @@ typedef struct Token_list {
   Token *tokens;
 } Token_list;
 Token_list *lexer(char *text);
-void free_tokens(Token_list *token_list, size_t index);
+void free_tokens(Token_list *token_list);
 #endif
