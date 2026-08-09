@@ -1,8 +1,11 @@
 #include "./parser.h"
 
-void parser(void) {
-  Token_list *token = lexer(
-      (char *)"{\"name\":\"lucas\",\"age\":19,\"isStudent\":true,\"salary\": "
-              "1300.00,\"otherValue\": -12.90}");
+void parser(char *json) {
+  Token_list *token = lexer(json);
+  // for (size_t i = 0; i < token->count; i++) {
+  //   printf("\nToken type: %d\nLexeme: %s\n", token->tokens[i].token,
+  //          token->tokens[i].lexeme);
+  // }
+  show_token_list(token);
   free_tokens(token);
 }

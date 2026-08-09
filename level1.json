@@ -1,5 +1,8 @@
 {
 	"name": "Lucas",
 	"age": 19,
-	"isStudent": true
+	"height": 1.75,
+	"active": true,
+	"verified": false,
+	"nickname": null
 }

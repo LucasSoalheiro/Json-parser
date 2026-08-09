@@ -1,19 +1,53 @@
 {
-	"texto": "valor texto",
-	"numero": 12,
-	"decimal": 12.12,
-	"booleano": true,
-	"sem_valor": null,
-	"lista": [],
-	"lista_com_itens": [
-		"texto",
-		12,
-		true
+	"id": 123456789,
+	"name": "Lucas \"The Programmer\"",
+	"description": "A programmer\nwho likes C, parsers and low-level programming.",
+	"numbers": {
+		"zero": 0,
+		"negative": -42,
+		"decimal": 3.14159,
+		"negativeDecimal": -19.90,
+		"exponent": 1e10,
+		"negativeExponent": -2.5e-3,
+		"positiveExponent": 6.02E+23
+	},
+	"booleanValues": [
+		true,
+		false,
+		true,
+		false
 	],
-	"objeto": {},
-	"objeto_com_itens": {
-		"verdadeiro": true,
-		"falso": false,
-		"texto": "texto"
-	}
+	"nullValues": [
+		null,
+		null,
+		null
+	],
+	"empty": {
+		"object": {},
+		"array": []
+	},
+	"nested": {
+		"level1": {
+			"level2": {
+				"level3": {
+					"value": "deep value"
+				}
+			}
+		}
+	},
+	"mixed": [
+		42,
+		"hello",
+		true,
+		false,
+		null,
+		{
+			"inside": "object"
+		},
+		[
+			1,
+			2,
+			3
+		]
+	]
 }

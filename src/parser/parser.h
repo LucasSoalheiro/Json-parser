@@ -3,6 +3,6 @@
 
 #include "../lexer/lexer.h"
 
-void parser(void);
+void parser(char *json);
 
 #endif

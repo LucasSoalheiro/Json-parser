@@ -26,11 +26,14 @@ typedef struct Token {
   Token_type token;
   char *lexeme;
 } Token;
+
 typedef struct Token_list {
   size_t count;
   size_t capacity;
   Token *tokens;
 } Token_list;
-Token_list *lexer(char *text);
+
+Token_list *lexer(const char *text);
+void show_token_list(const Token_list *token_list);
 void free_tokens(Token_list *token_list);
 #endif

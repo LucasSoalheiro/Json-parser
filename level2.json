@@ -1,12 +1,25 @@
 {
-	"name": "Lucas",
-	"graduations": [
-		"FATEC",
-		"SENAI"
+	"user": {
+		"name": "Lucas Pereira",
+		"age": 19,
+		"scores": [
+			10,
+			8.5,
+			-3,
+			0,
+			100.25
+		],
+		"settings": {
+			"darkMode": true,
+			"notifications": false,
+			"language": "pt-BR"
+		}
+	},
+	"tags": [
+		"programming",
+		"C",
+		"JSON Parser"
 	],
-	"projects": {
-		"Minty": "PHP",
-		"Twent": "TS",
-		"Tic-Tac-Toe": "C"
-	}
+	"balance": -19.90,
+	"nothing": null
 }
