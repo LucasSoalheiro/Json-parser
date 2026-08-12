@@ -18,7 +18,7 @@ int main() {
 
   size_t bytes = fread(content, 1, file_size, file);
   content[bytes] = '\0';
-  parser(content);
+  parser(content, true);
   free(content);
   fclose(file);
 

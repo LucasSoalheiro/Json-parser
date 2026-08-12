@@ -15,6 +15,11 @@ bool is_value_delimeter(const char c) {
   return c == ',' || c == '}' || c == ']' || c == ' ' || c == '\t' ||
          c == '\n' || c == '\r' || c == '\0';
 }
+void next_valid(size_t *index, const char *text) {
+  while (!is_value_delimeter(text[*index + 1])) {
+    (*index)++;
+  }
+}
 
 bool is_valid_escape(const char c) {
   return c == '"' || c == '\\' || c == '/' || c == 'b' || c == 'f' ||
@@ -68,6 +73,7 @@ char *null_token(const char *text, size_t *index) {
     *index += 3;
     return strdup("null");
   }
+  next_valid(index, text);
   return NULL;
 }
 
@@ -79,7 +85,7 @@ char *string_token(const char *text, size_t *index) {
   while (text[end] != '"') {
     if (text[end] == '\\') {
       end++;
-      if (!is_valid_escape(text[end) {
+      if (!is_valid_escape(text[end])) {
         return NULL;
       }
     }
@@ -110,6 +116,7 @@ char *boolean_token(const char *text, size_t *index) {
     *index += 4;
     return strdup("false");
   }
+  next_valid(index, text);
   return NULL;
 }
 char *number_token(const char *text, size_t *index) {
